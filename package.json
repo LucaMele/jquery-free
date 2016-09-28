@@ -4,7 +4,7 @@
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node tests/test.js"
   },
   "repository": {
     "type": "git",
