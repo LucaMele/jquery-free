@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LucaMele/no-jquery.svg?branch=master)](https://travis-ci.org/LucaMele/no-jquery)
+[![Build Status](https://travis-ci.org/LucaMele/jquery-free.svg?branch=master)](https://travis-ci.org/LucaMele/jquery-free)
 
 # jquery-free Intro #
 
