@@ -4,7 +4,9 @@
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/test.js"
+    "start": "broccoli serve",
+    "build": "rm -rf dist && broccoli build dist",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,20 @@
   "bugs": {
     "url": "https://github.com/LucaMele/no-jquery/issues"
   },
-  "homepage": "https://github.com/LucaMele/no-jquery#readme"
+  "homepage": "https://github.com/LucaMele/no-jquery#readme",
+  "devDependencies": {
+    "babel": "^5.1.4",
+    "babel-core": "^5.1.4",
+    "babel-loader": "^5.1.4",
+    "broccoli": "^0.16.2",
+    "broccoli-babel-transpiler": "5.3.0",
+    "broccoli-concat": "^0.0.13",
+    "broccoli-funnel": "^0.2.3",
+    "broccoli-merge-trees": "^0.2.1",
+    "chai": "^2.2.0",
+    "glob": "^5.0.3",
+    "mocha": "^2.2.4",
+    "mocha-jshint": "^1.0.0",
+    "webpack": "^1.13.2"
+  }
 }
