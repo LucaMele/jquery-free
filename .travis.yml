@@ -3,8 +3,6 @@ before_install: npm install --global broccoli-cli
 before_deploy: npm run build
 deploy:
   provider: releases
-  api_key: "c5aa5e3ee25aa29ca20a4b7dea1af089515d396c"
-  file: "dist/jquery-free.js"
   skip_cleanup: true
   on:
     tags: true
