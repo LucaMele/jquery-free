@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/LucaMele/no-jquery.svg?branch=master)](https://travis-ci.org/LucaMele/no-jquery)
+
 # no-jquery Intro #
 
 This is for everyone that has to support only modern browsers and want to use native DOM objects instead of jQuery objects.
