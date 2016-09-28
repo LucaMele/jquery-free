@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/LucaMele/no-jquery.svg?branch=master)](https://travis-ci.org/LucaMele/no-jquery)
 
-# no-jquery Intro #
+# jquery-free Intro #
 
 This is for everyone that has to support only modern browsers and want to use native DOM objects instead of jQuery objects.
 
@@ -17,4 +17,7 @@ By including this REPO in your stack, you will be able to use native selectors a
 My goal is not to rebuild jQuery, but only some helpful functions which can be used with native DOM NODE objects. I assume query selector is available. So this is the browser support:
 
 http://caniuse.com/#feat=queryselector 
+
+
+## THIS REPO IS STILL WORK IN PROGRESS ##
 
