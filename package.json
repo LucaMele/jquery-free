@@ -4,7 +4,7 @@
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
