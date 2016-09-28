@@ -1,0 +1,24 @@
+{
+  "name": "no-jquery",
+  "version": "0.0.0",
+  "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaMele/no-jquery.git"
+  },
+  "keywords": [
+    "no-jquery;",
+    "native;",
+    "querySelector"
+  ],
+  "author": "Luca.Mele@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucaMele/no-jquery/issues"
+  },
+  "homepage": "https://github.com/LucaMele/no-jquery#readme"
+}
