@@ -1,6 +1,6 @@
 {
   "name": "jquery-free",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
