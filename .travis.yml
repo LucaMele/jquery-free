@@ -10,4 +10,4 @@ deploy:
   file: dist/jquery-free.js
   skip_cleanup: true
   on:
-    repo: LucaMele/jquery-free
+    tags: true
