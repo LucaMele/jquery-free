@@ -1,4 +1,5 @@
-var jqueryFree = require('dist/jquery-free.js');
+var JqueryFree = require('./dist/jquery-free.js');
 
+console.log(new JqueryFree().isExampleClass)
 
-modules.export = jqueryFree;
+module.export = JqueryFree;
