@@ -1,11 +1,9 @@
 import { expect } from 'chai';
-import Example from '../../src';
 
-describe('broccoli-babel-boilerplate exports a default class', () => {
+describe('todo', () => {
 
-    it('Example#isExampleClass is true', () => {
-        var example = new Example();
-        expect(example.isExampleClass).to.equal(true);
+    it('true is true', () => {
+        expect(true).to.equal(true);
     });
 
 });

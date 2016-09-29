@@ -2,11 +2,14 @@
   "predef": [
     "console",
     "it",
+    "window",
+    "global",
     "describe",
     "beforeEach",
     "afterEach",
     "before",
     "after",
+    "Element",
     "-Promise"
   ],
   "expr": true,

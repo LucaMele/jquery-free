@@ -1,12 +1,13 @@
 {
   "name": "jquery-free",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
-    "start": "broccoli serve",
-    "build": "rm -rf dist && broccoli build dist",
-    "test": "mocha"
+    "test": "npm run build && mocha --compilers js:babel-register",
+    "build": "node tasks/build.js",
+    "watch": "npm-watch",
+    "serve": "npm run build && node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,19 +24,21 @@
     "url": "https://github.com/LucaMele/no-jquery/issues"
   },
   "homepage": "https://github.com/LucaMele/no-jquery#readme",
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
   "devDependencies": {
-    "babel": "^5.1.4",
-    "babel-core": "^5.1.4",
-    "babel-loader": "^5.1.4",
-    "broccoli": "^0.16.2",
-    "broccoli-babel-transpiler": "5.3.0",
-    "broccoli-concat": "^0.0.13",
-    "broccoli-funnel": "^0.2.3",
-    "broccoli-merge-trees": "^0.2.1",
-    "chai": "^2.2.0",
-    "glob": "^5.0.3",
-    "mocha": "^2.2.4",
-    "mocha-jshint": "^1.0.0",
-    "webpack": "^1.13.2"
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "jsdom": "^9.5.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.1.0",
+    "mocha-jshint": "^2.3.1",
+    "node-mkdirp": "0.0.1",
+    "npm-watch": "^0.1.6",
+    "uglifyify": "^3.0.3"
   }
 }
