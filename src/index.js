@@ -30,7 +30,7 @@ class JQueryFree extends Core {
 }
 
 var root;
-if (window) {
+if (typeof window !== 'undefined') {
     root = window;
 } else if (global) {
     root = global;
