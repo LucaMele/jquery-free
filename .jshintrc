@@ -9,7 +9,7 @@
     "afterEach",
     "before",
     "after",
-    "Element",
+    "HTMLElement",
     "-Promise"
   ],
   "expr": true,

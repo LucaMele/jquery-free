@@ -9,10 +9,13 @@
     <div class="demo1">
         <h3>
             <span>Test temo 1</span>
-            <button onclick="jqFree(this).closest('div').style.color='red'">Press me to use jqFree.closest</button>
+            <button onclick="jqFree(this).call('closest', 'div').style.color='red';">Press me to use jqFree.closest</button>
         </h3>
     </div>
-    <div class="demo2"></div>
+    <div class="demo2">
+        <span>Test temo 2</span>
+        <button onclick="jqFree(this).call('parentElement').style.color='red'">Press me to use check if jqFree inherits dom proprieties</button>
+    </div>
     <div class="demo3"></div>
 </body>
 </html>
