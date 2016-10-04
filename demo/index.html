@@ -9,12 +9,12 @@
     <div class="demo1">
         <h3>
             <span>Test temo 1</span>
-            <button onclick="jqFree(this).call('closest', 'div').style.color='red';">Press me to use jqFree.closest</button>
+            <button onclick="_$(this)._('closest', 'h3')._('closest', '.demo1').get().style.color='red';">Press me to use _$.closest</button>
         </h3>
     </div>
     <div class="demo2">
         <span>Test temo 2</span>
-        <button onclick="jqFree(this).call('parentElement').style.color='red'">Press me to use check if jqFree inherits dom proprieties</button>
+        <button onclick="_$(this)._('parentElement').style.color='red'">Press me to use check if _$ inherits dom proprieties</button>
     </div>
     <div class="demo3"></div>
 </body>

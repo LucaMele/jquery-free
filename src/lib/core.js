@@ -9,20 +9,20 @@ export default class Core{
      * @returns {*}
      */
     closest(selector) {
-        if (this.domNode.closest) {
-            return this.domNode.closest(selector);
+        if (this.lastSelected.closest) {
+            return this.lastSelected.closest(selector);
         }
         var matchesSelector =
-            this.domNode.matches ||
-            this.domNode.webkitMatchesSelector ||
-            this.domNode.mozMatchesSelector ||
-            this.domNode.msMatchesSelector;
-        while (this.domNode) {
-            if (matchesSelector.call(this.domNode, selector)) {
+            this.lastSelected.matches ||
+            this.lastSelected.webkitMatchesSelector ||
+            this.lastSelected.mozMatchesSelector ||
+            this.lastSelected.msMatchesSelector;
+        while (this.lastSelected) {
+            if (matchesSelector.call(this.lastSelected, selector)) {
                 break;
             }
-            this.domNode = this.domNode.parentElement;
+            this.lastSelected = this.lastSelected.parentElement;
         }
-        return this.domNode;
+        return this.lastSelected;
     }
 }

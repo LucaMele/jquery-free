@@ -1,6 +1,6 @@
 {
   "name": "jquery-free",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Some utility functions for native DOM NODE objects, like jQuery without overhead of functions. Better performance ",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,8 @@
     "url": "git+https://github.com/LucaMele/no-jquery.git"
   },
   "keywords": [
-    "no-jquery;",
-    "native;",
+    "jquery-free",
+    "native",
     "querySelector"
   ],
   "author": "Luca.Mele@hotmail.com",

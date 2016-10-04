@@ -5,37 +5,50 @@ class JQueryFree extends Core {
         super();
         this.domNode = domNode;
         this.isInstanced = true;
+        this.lastSelected = domNode;
         return this;
+    }
+
+    /**
+     * @description shorthand
+     * @param name
+     * @private
+     */
+    _(name) {
+        let args = [].slice.call(arguments);
+        return this._call(name, args);
+    }
+
+    /**
+     * @description get latest selected el
+     */
+    get() {
+        return this.lastSelected;
     }
 
     /**
      *
      * @param name
+     * @param args
+     * @returns {*}
+     * @private
      */
-    call(name) {
-        let args = [].slice.call(arguments);
+    _call(name, args) {
         args.shift();
         if(this.domNode[name]) {
             if (typeof this.domNode[name] === 'function') {
-                return this.domNode[name](...args);
+                this.lastSelected = this.domNode[name](...args);
+                return this;
             }
-            return this.domNode[name];
+            return this.get()[name];
         }
-        else if (this[name] === undefined) {
+        else if (typeof this[name] !== 'function') {
             throw new Error('No valid propriety found');
         } else {
-            return this[name](...args);
+            this.lastSelected = this[name](...args);
+            return this;
         }
     }
-}
-
-var root;
-if (typeof window !== 'undefined') {
-    root = window;
-} else if (global) {
-    root = global;
-} else {
-    root = {};
 }
 
 var wrapper = (domNode) => {
@@ -45,11 +58,20 @@ var wrapper = (domNode) => {
     return new JQueryFree(domNode);
 };
 
-var isNode = false;
+var root;
+if (typeof window !== 'undefined') {
+    root = window;
+} else if (typeof global !== 'undefined') {
+    root = global;
+} else {
+    root = {};
+}
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = wrapper;
-    root.jqFree = wrapper;
-    isNode = true;
+    root._$ = wrapper;
 } else {
-    root.jqFree = wrapper;
+    root._$ = wrapper;
 }
+
+

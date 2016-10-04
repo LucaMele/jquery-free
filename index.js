@@ -1,3 +1,3 @@
-var JqueryFree = require('./dist/jquery-free.js');
+var jqueryFree = require('./src/index.js');
 
-module.export = JqueryFree;
+module.exports = jqueryFree;
