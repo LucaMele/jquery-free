@@ -1,6 +1,22 @@
-export default class Core{
+export default class Core {
     constructor() {
+        this.storage = null;
+    }
 
+    /**
+     *
+     * @param selector
+     * @param func
+     * @returns {*}
+     * @private
+     */
+    _getAndCheckNative(selector, func) {
+        let node = this.storage.domNode;
+        if (node[func]) {
+            this.storage.update(node[func](selector));
+            return this;
+        }
+        return null;
     }
 
     /**
@@ -9,20 +25,21 @@ export default class Core{
      * @returns {*}
      */
     closest(selector) {
-        if (this.lastSelected.closest) {
-            return this.lastSelected.closest(selector);
-        }
+        let t = this._getAndCheckNative(selector, 'closest');
+        if (t) { return t; }
+        let node = this.storage.domNode;
         var matchesSelector =
-            this.lastSelected.matches ||
-            this.lastSelected.webkitMatchesSelector ||
-            this.lastSelected.mozMatchesSelector ||
-            this.lastSelected.msMatchesSelector;
-        while (this.lastSelected) {
-            if (matchesSelector.call(this.lastSelected, selector)) {
+            node.matches ||
+            node.webkitMatchesSelector ||
+            node.mozMatchesSelector ||
+            node.msMatchesSelector;
+        while (node) {
+            if (matchesSelector.call(node, selector)) {
                 break;
             }
-            this.lastSelected = this.lastSelected.parentElement;
+            node = node.parentElement;
         }
-        return this.lastSelected;
+        this.storage.update(node);
+        return this;
     }
 }

@@ -29,11 +29,11 @@ describe('_$ core', () => {
     });
 
     it('closest() works as expected', () => {
-        expect(_$(doc.querySelector('.tester-five'))._('closest', '.tester-one').get().id).to.equal('tester-id-one');
+        expect(_$(doc.querySelector('.tester-five')).closest('.tester-one').get().id).to.equal('tester-id-one');
     });
 
     it('is chainable', () => {
-        expect(_$(doc.querySelector('.tester-five'))._('closest', '.tester-three')._('closest', '.tester-one').get().id).to.equal('tester-id-one');
+        expect(_$(doc.querySelector('.tester-five')).closest('.tester-three').closest('.tester-one').get().id).to.equal('tester-id-one');
     });
 
 });

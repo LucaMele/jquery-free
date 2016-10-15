@@ -1,11 +1,11 @@
 import Core from './lib/core';
+import Storage from './lib/storage';
 
 class JQueryFree extends Core {
     constructor(domNode) {
         super();
-        this.domNode = domNode;
+        this.storage = new Storage(domNode);
         this.isInstanced = true;
-        this.lastSelected = domNode;
         return this;
     }
 
@@ -23,7 +23,25 @@ class JQueryFree extends Core {
      * @description get latest selected el
      */
     get() {
-        return this.lastSelected;
+        return this.storage.domNode;
+    }
+
+    /**
+     *
+     * @param name
+     * @param args
+     * @returns {*}
+     */
+    checkNative(name, args) {
+        let node = this.storage.domNode;
+        if (node[name]) {
+            if (typeof node[name] === 'function') {
+                this.storage.update(node[name](...args));
+                return this;
+            }
+            return this.get()[name];
+        }
+        return null;
     }
 
     /**
@@ -35,18 +53,13 @@ class JQueryFree extends Core {
      */
     _call(name, args) {
         args.shift();
-        if(this.domNode[name]) {
-            if (typeof this.domNode[name] === 'function') {
-                this.lastSelected = this.domNode[name](...args);
-                return this;
-            }
-            return this.get()[name];
-        }
-        else if (typeof this[name] !== 'function') {
+        let native = this.checkNative(name, args);
+        if (native) {
+            return native;
+        } else if (typeof this[name] !== 'function') {
             throw new Error('No valid propriety found');
         } else {
-            this.lastSelected = this[name](...args);
-            return this;
+            return this[name](...args);
         }
     }
 }
