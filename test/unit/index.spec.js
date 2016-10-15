@@ -36,4 +36,11 @@ describe('_$ core', () => {
         expect(_$(doc.querySelector('.tester-five')).closest('.tester-three').closest('.tester-one').get().id).to.equal('tester-id-one');
     });
 
+    it('addClass works as expected', () => {
+        expect(_$(doc.querySelector('.tester-five')).addClass('test-add-class').get().className).to.equal('tester-five test-add-class');
+        expect(_$(doc.querySelector('.tester-five')).addClass('test-add-other').get().className).to.equal('tester-five test-add-class test-add-other');
+        _$(doc.querySelectorAll('div')).addClass('add-class-all');
+        expect(!!~doc.querySelector('.tester-five').className.indexOf('add-class-all')).to.equal(true);
+    });
+
 });

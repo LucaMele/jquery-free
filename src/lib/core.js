@@ -42,4 +42,26 @@ export default class Core {
         this.storage.update(node);
         return this;
     }
+
+    /**
+     *
+     * @param className
+     */
+    addClass(className) {
+        let node = this.storage.domNode;
+        let nodes;
+        let nodesAll = Array.prototype.slice.call(node);
+        if (nodesAll.length) {
+            nodes = nodesAll;
+        } else {
+            nodes = [node];
+        }
+        nodes.forEach((n) => {
+            if ((n.className).indexOf(className) === -1) {
+                n.className += ` ${className}`;
+            }
+        });
+        this.storage.update(node);
+        return this;
+    }
 }
