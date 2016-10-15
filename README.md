@@ -12,6 +12,13 @@ With this repo, my main goal is to be able to use native DOM selectors and also 
  
 By including this REPO in your stack, you will be able to use native selectors and also some jQuery like function that makes your life easier.
 
+## Implemented methods so far ##
+
+Here is a list of the implemented utility methods so far. The list will be growing untill version 1.
+
+- `.closest('.class-name')`. This selects the closest parent the same way as jquery does. Checkout the `demo/index.html`
+- `.addClass('class-name')`. This adds a class to the selected element with querySelector or the elements selected with querySelectorAll. Checkout the `demo/index.html`
+
 ## Browser support ##
 
 My goal is not to rebuild jQuery, but only some helpful functions which can be used with native DOM NODE objects. I assume query selector is available. So this is the browser support:

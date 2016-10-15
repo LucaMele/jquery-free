@@ -49,6 +49,11 @@ export default class Core {
      */
     addClass(className) {
         let node = this.storage.domNode;
+        if (node.classList && node.classList.addClass) {
+            this.storage.update(node.classList.addClass(className));
+            return this;
+        }
+
         let nodes;
         let nodesAll = Array.prototype.slice.call(node);
         if (nodesAll.length) {

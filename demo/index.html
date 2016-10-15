@@ -6,6 +6,11 @@
 </head>
 <body>
     <script src="/jquery-free.js"></script>
+    <style>
+        .hello {
+            color: yellowgreen;
+        }
+    </style>
     <div class="demo1">
         <h3>
             <span>Test temo 1</span>
@@ -16,6 +21,13 @@
         <span>Test temo 2</span>
         <button onclick="_$(this)._('parentElement').style.color='red'">Press me to use check if _$ inherits dom proprieties</button>
     </div>
-    <div class="demo3"></div>
+    <div class="demo3">
+        <span>Test temo 3</span>
+        <button onclick="_$(this).closest('.demo3').addClass('hello')">Press me to see if add class works as it should</button>
+    </div>
+    <div class="demo4">
+        <span>Test temo 3</span>
+        <button onclick="_$(document.querySelectorAll('div')).addClass('hello')">Press me to see if add class works for a query selector all</button>
+    </div>
 </body>
 </html>
